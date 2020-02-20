@@ -1,0 +1,81 @@
+<h1>Veillez remplir le formulaire ci-dessous. </h1>
+<form #validationChaussure="ngForm" (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+        <input type="text" class="form-control" id="modele" (keypress)="logValue()" name="modele" required
+            [(ngModel)]="articleForm.modele" #modele="ngModel" placeholder="Rentrez le modèle ici">
+        <div [hidden]="modele.valid" class=" hidden alert alert-danger">
+            Veuillez saisir un modèle
+        </div>
+    </div>
+
+        <div class="form-check-inline">
+        <label class="form-check-label label" for="marque">Marque de l'ordinateur</label>
+        <ng-container *ngFor="let marque of marqueDisponible">
+            <div>
+                <input type="radio" id="inputRadio-{{ marque }}" #marqueValidation="ngModel" name="marque" [value]="marque"
+                    required [(ngModel)]="articleForm.marque">
+                <label for="customRadio">{{ marque }}</label>
+            </div>
+        </ng-container>
+
+    </div>
+
+    <div class="form-group">
+        <label>Type d'ordinateurs disponibles :</label> <br>
+        <select #type="ngModel" name="type" [(ngModel)]="articleForm.type" required class="form-control">
+            <option></option>
+            <option *ngFor="let type of typeOrdinateursDisponible">
+                {{ type }}
+            </option>
+        </select>
+    </div>
+
+
+
+    <div class="form-check-inline">
+        <label class="form-check-label label" for="category">Catégorie de l'ordinateur</label>
+        <div>
+            <input type="radio" class="form-check-input" id="gaming" name="marque" value="Gaming" checked
+                [(ngModel)]="articleForm.category" #marque="ngModel">
+            <label for="gaming">Gaming</label>
+        </div>
+    
+        <div>
+            <input type="radio" class="form-check-input" id="bureautique" name="marque" value="Bureautique" checked
+                [(ngModel)]="articleForm.category" #category="ngModel">
+            <label for="bureautique">Bureautique</label>
+        </div>
+    
+        <div>
+            <input type="radio" id="apple" name="marque" value="Apple" checked [(ngModel)]="articleForm.marque"
+                #category="ngModel">
+            <label for="apple">Apple</label>
+        </div>
+    
+        <div>
+            <input type="radio" id="assus" name="premier-prix" value="Premier prix" checked
+                [(ngModel)]="articleForm.category" #category="ngModel">
+            <label for="premier-prix">Premier prix</label>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="label" for="dateEntreeStock">Date d'entrée</label><br>
+
+        <input type="date" id="dateEntreeStock" name="dateEntreeStock" value="2019-02-18" min="2010-01-01" max="2020-12-31"
+            [(ngModel)]="articleForm.dateEntreeStock" #dateEntreeStock="ngModel">
+ </div>
+
+ <div class="form-group">
+    <label for="prixAchat" class="label">Prix d'achat :</label>
+<input type="number" class="form-control" id="prixAchat" (keypress)="logValue()" name="prixAchat" required
+    [(ngModel)]="articleForm.prixAchat" #prixAchat="ngModel" placeholder="Rentrez le prix d'achat ici">
+ </div>
+ <div class="form-group">
+    <label for="prixAchat" class="label">Prix de vente :</label>
+<input type="number" class="form-control" id="prixVente" (keypress)="logValue()" name="prixVente" required
+    [(ngModel)]="articleForm.prixVente" #prixVente="ngModel" placeholder="Rentrez le prix de vente ici">
+ </div>
+    <input id="submit" type="submit" [disabled]="!validationChaussure.valid" value="Créer">
+
+</form>

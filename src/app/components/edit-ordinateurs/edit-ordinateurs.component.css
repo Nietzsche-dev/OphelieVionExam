@@ -1,0 +1,32 @@
+h1{
+    text-align: center;
+    size: 25px;
+}
+
+.label{
+    width: max-content;
+    text-align: center ;
+    text-transform: uppercase;
+    text-decoration: underline overline grey;
+}
+
+input:checked{
+    text-align: center;
+}
+
+div {
+    width: 100%;
+    display: block;
+}
+.hidden {
+    width: max-content;
+     text-align: center;
+ }
+
+form{
+    margin-top: 0em;
+    line-height: 30px;
+     width: 250px;
+    margin: auto;
+    text-align: center;
+}

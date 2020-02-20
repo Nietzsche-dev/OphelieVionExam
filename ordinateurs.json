@@ -1,0 +1,44 @@
+{
+  "ordinateurs": [
+    {
+      "id": 1,
+      "modele": "Latitude 3500 - 15.6",
+      "marque": "Assus",
+      "type": "Portable",
+      "category": "Bureautique",
+      "prixAchat": 120.88,
+      "prixVente": 300.1,
+      "dateEntreeStock": "2012-04-23T18:25:43.511Z"
+    },
+    {
+      "modele": "x5-038",
+      "marque": "Assus",
+      "type": "Portable",
+      "dateEntreeStock": "2020-02-14",
+      "prixAchat": 120,
+      "prixVente": 30,
+      "id": 2,
+      "category": "Gaming"
+    },
+    {
+      "dateEntreeStock": "2020-02-21",
+      "modele": "x5-038",
+      "marque": "Assus",
+      "type": "Portable",
+      "category": "Bureautique",
+      "prixAchat": 620,
+      "prixVente": 850,
+      "id": 3
+    },
+    {
+      "modele": "Test",
+      "marque": "HP",
+      "type": "Tablette hybride",
+      "category": "Bureautique",
+      "dateEntreeStock": "2020-02-09",
+      "prixAchat": 1000,
+      "prixVente": 2000,
+      "id": 4
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+<table class="table">
+    <thead class="thead-light">
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Modèle</th>
+            <th scope="col">Marque</th>
+            <th scope="col">Type</th>
+            <th scope="col">Catégorie</th>
+            <th scope="col">Prix d'achat</th>
+            <th scope="col">Prix de vente</th>
+            <th scolpe="col">Rentabilité</th>
+            <th scolpe="col">Date d'entrée</th>
+            <th scolpe="col">Action</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <ng-container *ngIf="!isLoading">
+            <tr *ngFor="let ordinateur of ordinateur">
+                <th scope="row" class="lineOrdinateur">{{ordinateur.id}}</th>
+                <td>{{ordinateur.modele}}</td>
+                <td>{{ordinateur.marque}}</td>
+                <td>{{ordinateur.type}}</td>
+                <td>{{ordinateur.category}}</td>
+                <td>{{ordinateur.prixAchat}}</td>
+                <td>{{ordinateur.prixVente}}</td>
+                <td>{{ordinateur.prixVente - ordinateur.prixAchat}}</td>
+                <td>{{ordinateur.dateEntreeStock}}</td>
+                <td>
+                    <a>
+                        <button [routerLink]="['/edit-ordinateurs', ordinateur.id]" class="btn btn-primary btn-sm">Editer</button>
+                    </a>
+                    <a>
+                        <button (click)="deleteOrdinateurs(ordinateur)" type="button" class="btn btn-labeled btn-danger">Supprimer</button>
+                    </a>
+                </td>
+            </tr>
+        </ng-container>
+    </tbody>
+</table>
+<ng-container *ngIf="isLoading">
+</ng-container>
+<div class="text-center"><h2>Il y a {{nbrestock}} ordinateurs de disponible.</h2></div>
